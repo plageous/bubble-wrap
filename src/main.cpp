@@ -5,6 +5,7 @@
 #include <bn_sprite_ptr.h>
 #include <bn_sprite_items_dot.h>
 #include <bn_log.h>
+#include <bn_vector.h>
 
 
 int main()
@@ -40,9 +41,12 @@ int main()
     bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
     */
 
+    bn::vector<bn::sprite_ptr, 10> circles = {};
+
     for (int x = -40; x <= 40; x += 10) {
         bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 40);
         BN_LOG("x value", x);
+        circles.push_back(myCircle);
     }
 
 
