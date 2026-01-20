@@ -6,6 +6,8 @@
 #include <bn_sprite_items_dot.h>
 #include <bn_log.h>
 #include <bn_vector.h>
+#include <bn_math.h>
+#include <bn_fixed.h>
 
 
 int main()
@@ -43,6 +45,7 @@ int main()
 
     bn::vector<bn::sprite_ptr, 38> circles = {};
 
+    // square (box)
     for (int x = -40; x <= 40; x += 10) {
         circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
     }
@@ -57,6 +60,15 @@ int main()
 
     for (int y = -30; y <= 30; y += 10) {
         circles.push_back(bn::sprite_items::dot.create_sprite(40, y));
+    }
+
+    // circle
+    bn::vector<bn::sprite_ptr, 36> circles2 = {};
+    int r = 70;
+    for (int a = 0; a < 360; a += 10) {
+        int x = (bn::fixed(r) * bn::degrees_cos(a)).integer();
+        int y = (bn::fixed(r) * bn::degrees_sin(a)).integer();
+        circles2.push_back(bn::sprite_items::dot.create_sprite(x, y));
     }
 
     while(true) {
