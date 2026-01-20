@@ -4,6 +4,7 @@
 #include <bn_keypad.h>
 #include <bn_sprite_ptr.h>
 #include <bn_sprite_items_dot.h>
+#include <bn_log.h>
 
 
 int main()
@@ -27,6 +28,7 @@ int main()
     bn::sprite_ptr myCircle7 = bn::sprite_items::dot.create_sprite(0, -10);
     */
 
+    /* brute force
     bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(-40, 40);
     bn::sprite_ptr myCircle2 = bn::sprite_items::dot.create_sprite(-30, 40);
     bn::sprite_ptr myCircle3 = bn::sprite_items::dot.create_sprite(-20, 40);
@@ -36,6 +38,13 @@ int main()
     bn::sprite_ptr myCircle7 = bn::sprite_items::dot.create_sprite(20, 40);
     bn::sprite_ptr myCircle8 = bn::sprite_items::dot.create_sprite(30, 40);
     bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
+    */
+
+    for (int x = -40; x <= 40; x += 10) {
+        bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 40);
+        BN_LOG("x value", x);
+    }
+
 
 
     while(true) {
