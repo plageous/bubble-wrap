@@ -17,6 +17,7 @@ int main()
     // if L and RIGHT pressed, turn background blue
     // if L and LEFT pressed, turn background dark green    
 
+    /* dots in the shape of a cross
     bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(0, 0);
     bn::sprite_ptr myCircle2 = bn::sprite_items::dot.create_sprite(0, 10);
     bn::sprite_ptr myCircle3 = bn::sprite_items::dot.create_sprite(0, 20);
@@ -24,6 +25,18 @@ int main()
     bn::sprite_ptr myCircle5 = bn::sprite_items::dot.create_sprite(10, 0);
     bn::sprite_ptr myCircle6 = bn::sprite_items::dot.create_sprite(-10, 0);
     bn::sprite_ptr myCircle7 = bn::sprite_items::dot.create_sprite(0, -10);
+    */
+
+    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(-40, 40);
+    bn::sprite_ptr myCircle2 = bn::sprite_items::dot.create_sprite(-30, 40);
+    bn::sprite_ptr myCircle3 = bn::sprite_items::dot.create_sprite(-20, 40);
+    bn::sprite_ptr myCircle4 = bn::sprite_items::dot.create_sprite(-10, 40);
+    bn::sprite_ptr myCircle5 = bn::sprite_items::dot.create_sprite(0, 40);
+    bn::sprite_ptr myCircle6 = bn::sprite_items::dot.create_sprite(10, 40);
+    bn::sprite_ptr myCircle7 = bn::sprite_items::dot.create_sprite(20, 40);
+    bn::sprite_ptr myCircle8 = bn::sprite_items::dot.create_sprite(30, 40);
+    bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
+
 
     while(true) {
         // L + UP = white
