@@ -74,6 +74,11 @@ int main()
         int x = (bn::fixed(r) * bn::degrees_cos(a)).integer();
         int y = (bn::fixed(r) * bn::degrees_sin(a)).integer();
         circles2.push_back(bn::sprite_items::dot.create_sprite(x, y));
+        if (a == 0) {
+            circles2[0].set_horizontal_scale(0.5);
+        } else {
+            circles2[a/10].set_horizontal_scale(0.5);
+        }
     }
 
     while(true) {
