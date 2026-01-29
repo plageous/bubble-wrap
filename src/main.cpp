@@ -13,7 +13,7 @@
 int main()
 {
     bn::core::init();
-    bn::backdrop::set_color(bn::color(31, 31, 31));
+    bn::backdrop::set_color(bn::color(31, 15, 0));
     
     // the plan:
     // if L and UP pressed, turn background white (default)
@@ -61,6 +61,11 @@ int main()
     for (int y = -30; y <= 30; y += 10) {
         circles.push_back(bn::sprite_items::dot.create_sprite(40, y));
     }
+
+    circles[0].set_scale(1.8);
+    circles[1].set_scale(0.5);
+    circles[2].set_scale(2.0);
+    circles[3].set_scale(0.1);
 
     // circle
     bn::vector<bn::sprite_ptr, 36> circles2 = {};
