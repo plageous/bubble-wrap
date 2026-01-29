@@ -70,14 +70,18 @@ int main()
     // circle
     bn::vector<bn::sprite_ptr, 36> circles2 = {};
     int r = 70;
+
     for (int a = 0; a < 360; a += 10) {
         int x = (bn::fixed(r) * bn::degrees_cos(a)).integer();
         int y = (bn::fixed(r) * bn::degrees_sin(a)).integer();
         circles2.push_back(bn::sprite_items::dot.create_sprite(x, y));
+
         if (a == 0) {
-            circles2[0].set_horizontal_scale(0.5);
-        } else {
-            circles2[a/10].set_horizontal_scale(0.5);
+            // preventing division by 0.
+            circles2[0].set_vertical_scale(0.5);
+        } else if ((a/10) % 2 == 0) {
+            circles2[a/10].set_vertical_scale(0.5);
+            circles2[a/10].set_rotation_angle_safe(-a);
         }
     }
 
